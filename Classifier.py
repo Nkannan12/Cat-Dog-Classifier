@@ -11,7 +11,6 @@ from torchvision import datasets, transforms, models
 
 data_dir = 'assets/Cat_Dog_data'
 
-# TODO: Define transforms for the training data and testing data
 train_transforms = transforms.compose([transforms.RandomRotation(30),
                                        transforms.RandomResizedCrop(224),
                                        transforms.RandomHorizontalFlip(),
@@ -22,7 +21,6 @@ test_transforms = transforms.compose([transforms.Resize(224),
                                        transforms.CenterCrop(223),
                                        transforms.ToTensor()])
 
-# Pass transforms in here, then run the next cell to see how the transforms look
 train_data = datasets.ImageFolder(data_dir + '/train', transform=train_transforms)
 test_data = datasets.ImageFolder(data_dir + '/test', transform=test_transforms)
 
